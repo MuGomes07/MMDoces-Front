@@ -1,0 +1,496 @@
+.topo {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #f77423;
+  padding: 10px 0;
+  top: 0;
+  position: fixed;
+  width: 100%;
+  z-index: 1050;
+  align-items: center;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+  flex: 1;
+  margin-left: 20px;
+  min-width: 60px;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 2;
+}
+
+.menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.menu li {
+  position: relative;
+}
+
+.menu a {
+  display: block;
+  padding: 12px 18px;
+  color: #ffffff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+.menu a:hover {
+  color: #CC0000;
+  background-color: #fff3cd;
+  box-shadow: 0 2px 8px rgba(204,0,0,0.08);
+}
+
+/* Dropdown */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #f77423 !important;
+  min-width: 160px;
+  z-index: 10;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  border-radius: 12px;
+}
+
+.dropdown-menu li a {
+  padding: 10px 15px;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-weight: 500;
+  display: block;
+  border-radius: 8px;
+  background-color: transparent;
+}
+
+.dropdown-menu li a:hover {
+  color: #CC0000;
+  background: #f77423;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Carrinho */
+.carrinho {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 15px;
+}
+
+.carrinho i {
+  color: #ffffff;
+  margin-right: 20px;
+  font-size: 24px;
+  transition: color 0.3s;
+}
+
+.carrinho i:hover {
+  color: #CC0000;
+}
+
+.cart-icon {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+
+.cart-icon .cart-count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: #CC0000;
+  color: white;
+  border-radius: 50%;
+  padding: 4px 8px;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+
+.modal-content {
+  background-color: #fff3cd;
+  border: 2px solid #f77423;
+  border-radius: 16px;
+}
+
+
+.modal-header {
+  background-color: #f77423;
+  color: white;
+  border-bottom: 1px solid #CC0000;
+}
+
+
+.modal-title {
+  font-family: 'Zalando Sans Expanded';
+  font-weight: 700;
+  font-size: 24px;
+}
+
+
+.modal-body {
+  padding: 1.5rem;
+}
+
+
+.cart-item {
+  gap: 12px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #f77423;
+  font-family: 'Zalando Sans Expanded';
+  font-size: 16px;
+}
+
+
+.cart-item span {
+  color: #333;
+  flex: 1;
+}
+
+
+.cart-item input.form-control {
+  width: 60px;
+  text-align: center;
+  border: 1px solid #f77423;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+
+.cart-item .btn-danger {
+  background-color: #CC0000;
+  border: none;
+  font-size: 15px;
+  padding: 3px 9px;
+}
+
+
+.cart-item .btn-danger:hover {
+  background-color: #a30000;
+}
+
+
+#cart-total {
+  color: #CC0000;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: left;
+}
+
+
+.payment-methods h6 {
+  color: #f77423;
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+
+.payment-methods ul {
+  padding: 0;
+  margin: 0;
+}
+
+
+.payment-methods li {
+  color: #333;
+  font-size: 16px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+}
+
+
+.payment-methods i {
+  color: #f77423;
+  margin-right: 8px;
+}
+
+
+.cart-empty {
+  color: #333;
+  font-size: 16px;
+  text-align: center;
+}
+
+
+/* Alerta de sucesso para finalização da compra */
+#cart-success {
+  background-color: #d4edda;
+  border: 1px solid #f77423;
+  color: #1a8f37;
+  font-family: 'Zalando Sans Expanded';
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
+  padding: 12px 0;
+}
+
+
+/* Botão de finalizar compra */
+#finalize-purchase {
+  background-color: #00c61e;
+  border: none;
+  font-family: 'Zalando Sans Expanded';
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+
+/* Hover do botão de finalizar compra */
+#finalize-purchase:hover {
+  background-color: #00760a;
+}
+
+
+/* ====== FORMAS DE PAGAMENTO ====== */
+.payment-methods h6 {
+  font-weight: 700;
+  color: #f77423;
+  margin-bottom: 10px;
+}
+
+/* Botões das formas de pagamento */
+.payment-methods button {
+  background-color: #fff4e6;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  transition: 0.2s ease;
+  font-weight: 500;
+  padding: 10px 14px;
+  margin-bottom: 8px;
+}
+
+.payment-methods button:hover {
+  background-color: #ffe9d1;
+  border-color: #f77423;
+  color: #f77423;
+}
+
+/* Ícones dentro dos botões */
+.payment-methods button i {
+  transition: transform 0.3s ease;
+}
+
+/* Faz a setinha girar quando abre */
+.payment-methods button[aria-expanded="true"] i.bi-chevron-down {
+  transform: rotate(180deg);
+}
+
+/* Blocos internos (collapse) */
+.payment-methods .collapse .border {
+  border-color: #f77423 !important;
+  background-color: #f1a75a !important; /* mais escuro */
+  color: #333;
+  padding: 15px; /* mais espaçamento */
+}
+
+/* Inputs dentro do bloco */
+.payment-methods .form-control {
+  border-radius: 10px;
+  border: 1.5px solid #f1a85a;
+  padding: 12px; /* campos maiores */
+  font-size: 16px;
+  width: 100%;
+}
+
+.payment-methods .form-control:focus {
+  border-color: #f77423;
+  box-shadow: 0 0 5px rgba(247, 116, 35, 0.3);
+}
+
+/* Texto do Pix */
+.payment-methods .text-success {
+  color: #1a8f37 !important;
+}
+
+/* Bloco Pix dentro do modal de pagamento */
+.payment-methods #pixCollapse .border {
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  text-align: center;
+}
+
+.payment-methods #pixCollapse img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.payment-methods #pixCollapse p {
+  word-break: break-word;
+}
+
+
+
+
+
+
+
+
+
+
+/* Estilos Gerais do Container */
+.perfil-container-simples {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 25px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    background-color: #ffffff;
+}
+
+/* Cabeçalho */
+.perfil-header-simples {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.perfil-header-simples h1 {
+    font-size: 1.6em;
+    color: #4a2d0d; /* Marrom escuro (chocolate) */
+    margin-bottom: 5px;
+}
+
+.contato-info {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.btn-acao {
+    background-color: #ffb6c1; /* Rosa claro */
+    color: #4a2d0d;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn-acao:hover {
+    background-color: #ff9aa8;
+}
+
+/* Resumo Rápido (Fatos) */
+.resumo-rapido h2, .historico-simples h2 {
+    font-size: 1.2em;
+    color: #8b4513; /* Marrom médio */
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+.fatos-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: space-between;
+}
+
+.fato {
+    flex: 1 1 45%; /* Duas colunas em telas maiores */
+    padding: 10px;
+    background-color: #f7f7f7;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
+.fato strong {
+    display: block;
+    color: #333;
+    margin-bottom: 3px;
+}
+
+/* Histórico de Pedidos */
+.lista-pedidos {
+    list-style: none;
+    padding: 0;
+}
+
+.pedido-linha {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 0.9em;
+}
+
+.pedido-linha > span {
+    flex: 1; /* Distribui o espaço */
+    text-align: left;
+}
+
+.pedido-id {
+    font-weight: bold;
+    color: #4a2d0d;
+    flex: 0 0 60px; /* Largura fixa */
+}
+
+.pedido-status {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    font-weight: 600;
+    text-align: center;
+    flex: 0 0 70px; /* Largura fixa */
+}
+
+.status-ok {
+    background-color: #e8f5e9; /* Verde claro */
+    color: #2e7d32; /* Verde escuro */
+}
+
+.status-cancel {
+    background-color: #ffebee; /* Vermelho claro */
+    color: #c62828; /* Vermelho escuro */
+}
+
+/* Responsividade simples */
+@media (max-width: 480px) {
+    .fatos-grid {
+        flex-direction: column;
+    }
+    .pedido-linha {
+        flex-wrap: wrap;
+    }
+    .pedido-desc {
+        flex: 1 1 100%;
+        margin-top: 5px;
+    }
+}

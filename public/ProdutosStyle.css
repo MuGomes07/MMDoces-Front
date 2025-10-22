@@ -1,0 +1,561 @@
+/* =============================
+   IMPORTAÇÃO DE FONTES
+============================= */
+@import url('https://fonts.googleapis.com/css2?family=Zalando+Sans+Expanded:ital,wght@0,200..900;1,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+
+/* =============================
+   RESET E ESTILO GERAL
+============================= */
+body {
+  background-color: #f8dc6db0 !important;
+  margin: 0;
+  padding-top: 0px; /* Espaço para o menu fixo */
+  font-family: 'Zalando Sans Expanded', sans-serif;
+}
+
+* {
+  font-size: 20px;
+  font-family: 'Zalando Sans Expanded';
+  box-sizing: border-box;
+}
+
+
+/* =============================
+   MENU/TOPO/NAVEGAÇÃO
+============================= */
+.topo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f77423;
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;        /* Cola o menu no topo */
+  left: 0;
+  width: 100%;
+  z-index: 1050; /* Mantém o menu sobre o conteúdo */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Logo */
+.topo img {
+  height: 45px;
+}
+
+.logo {
+  flex: 1;
+  margin-left: 20px;
+  min-width: 60px;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 2;
+}
+
+.menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.menu li {
+  position: relative;
+}
+
+.menu a {
+  display: block;
+  padding: 12px 18px;
+  color: #ffffff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+.menu a:hover {
+  color: #CC0000;
+  background-color: #fff3cd;
+  box-shadow: 0 2px 8px rgba(204,0,0,0.08);
+}
+
+/* Dropdown do menu */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #f77423 !important;
+  min-width: 160px;
+  z-index: 10;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  border-radius: 12px;
+}
+
+.dropdown-menu li a {
+  padding: 10px 15px;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-weight: 500;
+  display: block;
+  border-radius: 8px;
+  background-color: transparent;
+}
+
+.dropdown-menu li a:hover {
+  color: #CC0000;
+  background: #f77423;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Carrinho no topo */
+.carrinho {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 15px;
+}
+
+.carrinho i {
+  color: #ffffff;
+  margin-right: 20px;
+  font-size: 24px;
+  transition: color 0.3s;
+}
+
+.carrinho i:hover {
+  color: #CC0000;
+}
+
+/* =============================
+   AJUSTES GERAIS DE IMAGEM E CONTAINER
+============================= */
+img, .card-img, .carousel-inner img {
+  max-width: 100%;
+  height: auto;
+}
+
+.container, .mm-destaque-frase, .modal-content, .footer, .mm-footer {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* =============================
+   CARRINHO E MODAL (ESTILO BOOTSTRAP)
+============================= */
+.cart-icon {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.cart-icon .cart-count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: #CC0000;
+  color: white;
+  border-radius: 50%;
+  padding: 4px 8px;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.modal-content {
+  background-color: #fff3cd;
+  border: 2px solid #f77423;
+  border-radius: 16px;
+}
+
+.modal-header {
+  background-color: #f77423;
+  color: white;
+  border-bottom: 1px solid #CC0000;
+}
+
+.modal-title {
+  font-family: 'Zalando Sans Expanded';
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.modal-body {
+  padding: 1.5rem;
+}
+
+.cart-item {
+  gap: 12px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #f77423;
+  font-family: 'Zalando Sans Expanded';
+  font-size: 16px;
+}
+
+.cart-item span {
+  color: #333;
+  flex: 1;
+}
+
+.cart-item input.form-control {
+  width: 60px;
+  text-align: center;
+  border: 1px solid #f77423;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.cart-item .btn-danger {
+  background-color: #CC0000;
+  border: none;
+  font-size: 15px;
+  padding: 3px 9px;
+}
+
+.cart-item .btn-danger:hover {
+  background-color: #a30000;
+}
+
+#cart-total {
+  color: #CC0000;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: left;
+}
+
+.payment-methods h6 {
+  color: #f77423;
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.payment-methods ul {
+  padding: 0;
+  margin: 0;
+}
+
+.payment-methods li {
+  color: #333;
+  font-size: 16px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.payment-methods i {
+  color: #f77423;
+  margin-right: 8px;
+}
+
+.cart-empty {
+  color: #333;
+  font-size: 16px;
+  text-align: center;
+}
+
+/* =============================
+   SEÇÃO DE DESTAQUE
+============================= */
+.mm-destaque-frase {
+  padding: 30px 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  border: 2px solid #f77423;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.mm-mini-titulo {
+  color: #CC0000;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.mm-frase-principal {
+  color: #f77423;
+  font-size: 36px;
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+
+.mm-sub-frase {
+  color: #333;
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+/* =============================
+   BOTÕES
+============================= */
+.btn{
+  background-color: #CC0000;
+}
+
+/* =============================
+   CARDS DE PRODUTOS
+============================= */
+.produtos-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 48px;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 1px;
+}
+
+.card-produto {
+  background: #fff3cd;
+  border: 2px solid #f77423;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(247, 116, 35, 0.10);
+  width: 100%;
+  max-width: 260px;
+  padding: 24px 16px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.card-img {
+  width: 100%;
+  max-width: 180px;
+  height: auto;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  border: 2px solid #f77423;
+  box-shadow: 0 2px 8px rgba(204,0,0,0.08);
+}
+
+.card-titulo {
+  color: #f77423;
+  font-size: 22px;
+  margin: 8px 0 4px 0;
+  font-weight: bold;
+}
+
+.card-desc {
+  color: #333;
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.card-preco {
+  color: #CC0000;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.btn-comprar {
+    background-color: #f77423;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transform: translateY(0);
+    margin-top: 10px;
+}
+
+.btn-comprar:hover {
+    background-color: #CC0000;
+    transform: translateY(-2px) scale(1.04);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+}
+
+.btn-comprar:active {
+    background-color: #a30000;
+    transform: translateY(2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.card-produto:hover {
+    box-shadow: 0 10px 20px rgba(247, 116, 35, 0.4);
+    transform: translateY(-5px) scale(1.03);
+}
+
+/* =============================
+   RESPONSIVIDADE
+============================= */
+@media (max-width: 1200px) {
+  .produtos-container {
+    max-width: 100%;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 992px) {
+  .produtos-container {
+    gap: 16px;
+    margin: 20px auto;
+    padding: 5px;
+  }
+  .card-produto {
+    max-width: 100%;
+    padding: 16px 8px;
+  }
+  .card-img {
+    max-width: 120px;
+  }
+  .mm-destaque-frase {
+    padding: 20px 8px;
+    font-size: 90%;
+  }
+  .topo {
+    flex-direction: column;
+    padding: 8px 0;
+    position: static;
+  }
+  .menu ul {
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .logo {
+    margin-left: 0;
+    margin-bottom: 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .produtos-container {
+    gap: 8px;
+    padding: 2px;
+  }
+  .card-produto {
+    padding: 10px 2px;
+    font-size: 90%;
+  }
+  .card-img {
+    max-width: 80px;
+  }
+  .mm-destaque-frase {
+    padding: 10px 2px;
+    font-size: 80%;
+  }
+  .modal-content {
+    padding: 0 2px;
+  }
+  .modal-header, .modal-footer {
+    font-size: 90%;
+    padding: 8px 4px;
+  }
+  .modal-title {
+    font-size: 18px;
+  }
+  .cart-item {
+    font-size: 14px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+  .cart-item input.form-control {
+    width: 40px;
+    font-size: 14px;
+  }
+  .footer, .mm-footer {
+    font-size: 90%;
+    padding: 10px 2px;
+  }
+}
+
+@media (max-width: 480px) {
+  .produtos-container {
+    flex-direction: column;
+    gap: 4px;
+    padding: 1px;
+  }
+  .card-produto {
+    padding: 6px 1px;
+    font-size: 80%;
+  }
+  .card-img {
+    max-width: 60px;
+  }
+  .mm-destaque-frase {
+    padding: 4px 1px;
+    font-size: 70%;
+  }
+  .modal-content {
+    padding: 0 1px;
+  }
+  .modal-header, .modal-footer {
+    font-size: 80%;
+    padding: 4px 2px;
+  }
+  .modal-title {
+    font-size: 16px;
+  }
+  .footer, .mm-footer {
+    font-size: 80%;
+    padding: 6px 1px;
+  }
+}
+
+/* =============================
+   FOOTER
+============================= */
+.mm-footer {
+    background-color: #333 !important; /* Seu Laranja */
+    font-family: 'Zalando Sans Expanded';
+    color: white;
+    width: 100%; /* Garante que o footer sempre ocupe toda a largura */
+}
+
+/* Títulos das colunas e destaque de Copyright */
+.mm-footer .text-warning {
+    color: #CC0000 !important; /* Seu Vermelho de Destaque */
+    font-weight: 700 !important;
+}
+
+/* Links (Início, Bolos, Contato) e Ícones */
+.mm-footer a {
+    color: #f8dc6db0 !important;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+/* Hover dos links e Ícones */
+.mm-footer a:hover {
+    color: white !important;
+}
+
+/* Hover dos Ícones de Redes Sociais */
+.mm-footer .list-inline-item a:hover {
+    color: #CC0000 !important;
+}
+
+
+

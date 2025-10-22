@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../public/HomeStyle.css" />
+    <link rel="stylesheet" href="../public/ProdutosStyle.css">
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap Icons CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <title>M.M Doces & Salgados</title>
+  </head>
+
+
+  <body>
+    <div class="topo">
+      <div class="logo">
+        <img src="../public/img/LogoMM.png" alt="logo da marca" width="60px" />
+      </div>
+
+      <!-- Menu Dropdown -->
+      <nav class="menu" id="menu-nav">
+        <ul>
+          <li><a href="home.html">Início</a></li>
+          <li class="dropdown">
+            <a href="">Produtos</a>
+            <ul class="dropdown-menu">
+              <li><a href="Bolos.html">Bolos</a></li>
+              <li><a href="Salgados.html">Salgados</a></li>
+              <li><a href="KitFesta.html">Kit-Festa</a></li>
+              <li><a href="Diversos.html">Diversos</a></li>
+            </ul>
+          </li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </nav>
+
+      <div class="carrinho">
+        <a href="perfil.html"><i class="bi bi-person"></i></a>
+        <div id="open-cart-btn" class="cart-icon">
+          <i class="bi bi-cart2"></i>
+          <span class="cart-count" id="cart-count">0</span>
+        </div>
+      </div>
+    </div>
+    
+
+    <!-- Carrossel -->
+    <div id="meuCarrossel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3500">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img
+            src="../public/img/1.png"
+            class="d-block w-100 img-fluid"
+            alt="Imagem 1"
+            data-bs-interval="3500"
+          />
+        </div>
+        <div class="carousel-item">
+          <img
+            src="../public/img/2.png"
+            class="d-block w-100 img-fluid"
+            alt="Imagem 2"
+            data-bs-interval="3500"
+          />
+        </div>
+        <div class="carousel-item">
+          <img
+            src="../public/img/3.png"
+            class="d-block w-100 img-fluid"
+            alt="Imagem 3"
+            data-bs-interval="3500"
+          />
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#meuCarrossel"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon"></span>
+        <span class="visually-hidden">Anterior</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#meuCarrossel"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon"></span>
+        <span class="visually-hidden">Próximo</span>
+      </button>
+    </div>
+    <!-- FIM Carrossel -->
+
+    <div class="container my-5 mm-destaque-frase">
+      <h2 class="text-center mm-mini-titulo">Sua Confeitaria Online</h2>
+      <h1 class="text-center mm-frase-principal">
+        Segurança e Praticidade na Sua Compra
+      </h1>
+      <p class="text-center mm-sub-frase">
+        Garantimos a qualidade do pedido do clique até a entrega na sua casa.
+      </p>
+    </div>
+
+    <!-- Produtos responsivos -->
+    <div class="container">
+      <div class="row produtos-container gx-4 gy-5 justify-content-center">
+
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+          <div class="card-produto h-100 d-flex flex-column align-items-center" data-id="1">
+            <img
+              src="../public/img/ConeRecheado.jpg"
+              alt="Cone recheado"
+              class="card-img img-fluid"
+            />
+            <h3 class="card-titulo">Cone recheado</h3>
+            <p class="card-desc">Cone recheado com brigadeiro</p>
+            <span class="card-preco">R$ 15,00</span>
+            <button
+              class="btn-comprar"
+              data-name="Cone recheado"
+              data-price="15.00"
+            >
+              Comprar
+            </button>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+          <div class="card-produto h-100 d-flex flex-column align-items-center" data-id="2">
+            <img
+              src="../public/img/MiniChurros.jpg"
+              alt="Mini Churros"
+              class="card-img img-fluid"
+            />
+            <h3 class="card-titulo">Mini Churros</h3>
+            <p class="card-desc">Mini churros com açucar e canela</p>
+            <span class="card-preco">R$ 4,00</span>
+            <button class="btn-comprar" data-name="Mini Churros" data-price="4.00">
+              Comprar
+            </button>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+          <div class="card-produto h-100 d-flex flex-column align-items-center" data-id="3">
+            <img
+              src="../public/img/CopoFelicidade.jpg"
+              alt="Copo da Felicidade"
+              class="card-img img-fluid"
+            />
+            <h3 class="card-titulo">Copo da Felicidade</h3>
+            <p class="card-desc">Sobremesa gelada com camadas de doce.</p>
+            <span class="card-preco">R$ 12,00</span>
+            <button
+              class="btn-comprar"
+              data-name="Copo da Felicidade"
+              data-price="12.00"
+            >
+              Comprar
+            </button>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+          <div class="card-produto h-100 d-flex flex-column align-items-center" data-id="4">
+            <img
+              src="../public/img/BoloDePote.jpg"
+              alt="Bolo de Pote"
+              class="card-img img-fluid"
+            />
+            <h3 class="card-titulo">Bolo de Pote</h3>
+            <p class="card-desc">Bolo de pote com recheio cremoso.</p>
+            <br><br>
+            <span class="card-preco">R$ 10,00</span>
+            <button class="btn-comprar" data-name="Bolo de Pote" data-price="10.00">
+              Comprar
+            </button>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+          <div class="card-produto h-100 d-flex flex-column align-items-center" data-id="5">
+            <img
+              src="../public/img/MorangoDoNordeste.jpg"
+              alt="Morango do nordeste"
+              class="card-img img-fluid"
+            />
+            <h3 class="card-titulo">Morango do Nordeste</h3>
+            <p class="card-desc">
+              Morango com casca de chocolate e brigadeiro de ninho.
+            </p>
+            <span class="card-preco">R$ 10,00</span>
+            <button
+              class="btn-comprar"
+              data-name="Morango do Nordeste"
+              data-price="10.00"
+            >
+              Comprar
+            </button>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+          <div class="card-produto h-100 d-flex flex-column align-items-center" data-id="6">
+            <img src="../public/img/Quiche.jpg" alt="Quiche" class="card-img img-fluid" />
+            <h3 class="card-titulo">Quiche</h3>
+            <p class="card-desc">
+              Torta salgada com recheio cremoso de ovos e creme, geralmente com
+              queijo, legumes ou carnes.
+            </p>
+            <span class="card-preco">R$ 4,00</span>
+            <button class="btn-comprar" data-name="Quiche" data-price="4.00">
+              Comprar
+            </button>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+          <div class="card-produto h-100 d-flex flex-column align-items-center" data-id="7">
+            <img
+              src="../public/img/MiniHamburguer.jpg"
+              alt="Mini Hamburuer"
+              class="card-img img-fluid"
+            />
+            <h3 class="card-titulo">Mini Hamburguer</h3>
+            <p class="card-desc">Mini Hamburguer tradicional.</p>
+            <span class="card-preco">R$ 5,00</span>
+            <button
+              class="btn-comprar"
+              data-name="Mini Hamburguer"
+              data-price="5.00"
+            >
+              Comprar
+            </button>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+          <div class="card-produto h-100 d-flex flex-column align-items-center" data-id="8">
+            <img
+              src="../public/img/SurpresaDeUva.jpg"
+              alt="Surpresa de Uva"
+              class="card-img img-fluid"
+            />
+            <h3 class="card-titulo">Surpresa de Uva</h3>
+            <p class="card-desc">Taça recheada com uva e brigadeiro branco.</p>
+            <span class="card-preco">R$ 20,00</span>
+            <button
+              class="btn-comprar"
+              data-name="Surpresa de Uva"
+              data-price="20.00"
+            >
+              Comprar
+            </button>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+          <div class="card-produto h-100 d-flex flex-column align-items-center" data-id="9">
+            <img
+              src="../public/img/MacaDoAmor.jpg"
+              alt="Maça do amor"
+              class="card-img img-fluid"
+            />
+            <h3 class="card-titulo">Maça do amor</h3>
+            <p class="card-desc">Maça com cobertura de caramelo.</p>
+            <span class="card-preco">R$ 10,00</span>
+            <button class="btn-comprar" data-name="Maça do amor" data-price="10.00">
+              Comprar
+            </button>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    <!-- FIM Produtos responsivos -->
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white mm-footer">
+      <div class="container text-center text-md-left">
+        <div class="row text-center text-md-left">
+          <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+            <img
+              src="../public/img/LogoMM.png"
+              alt="logo da marca"
+              width="50px"
+              class="mb-2"
+            />
+            <h5 class="text-uppercase mb-4 font-weight-bold text-warning">
+              M.M Doces & Salgados
+            </h5>
+            <p>
+              Qualidade e sabor em cada pedacinho, feito com amor para você.
+            </p>
+          </div>
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+            <h5 class="text-uppercase mb-4 font-weight-bold text-warning">
+              Produtos
+            </h5>
+            <p><a href="produtos.html#Bolos" class="text-white">Bolos</a></p>
+            <p>
+              <a href="produtos.html#Salgado" class="text-white">Salgados</a>
+            </p>
+            <p>
+              <a href="produtos.html#Kitfesta" class="text-white">Kit-Festa</a>
+            </p>
+            <p>
+              <a href="produtos.html#Diversos" class="text-white">Diversos</a>
+            </p>
+          </div>
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+            <h5 class="text-uppercase mb-4 font-weight-bold text-warning">
+              Links Úteis
+            </h5>
+            <p><a href="home.html" class="text-white">Início</a></p>
+            <p><a href="login.html" class="text-white">Sua Conta</a></p>
+          </div>
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+            <h5 class="text-uppercase mb-4 font-weight-bold text-warning">
+              Contato
+            </h5>
+            <p>
+              <i class="bi bi-house-door-fill me-3"></i> Rua Ipauçu, VilaMarieta, 95</p>
+            <p>
+              <i class="bi bi-envelope-fill me-3"></i> m.marlimonte@gmail.com
+            </p>
+            <p><i class="bi bi-phone-fill me-3"></i> +55 (19) 99645-3018</p>
+            <p><i class="bi bi-whatsapp me-3"></i> +55 (19) 99645-3018</p>
+          </div>
+        </div>
+        <hr class="mb-4" />
+        <div class="row align-items-center">
+          <div class="col-md-7 col-lg-8">
+            <p class="text-center text-md-start">
+              © 2025 Copyright Todos os direitos reservados por:
+              <a href="#" style="text-decoration: none">
+                <strong class="text-warning">M.M Doces & Salgados</strong>
+              </a>
+            </p>
+          </div>
+          <div class="col-md-5 col-lg-4">
+            <div class="text-center text-md-end">
+              <ul class="list-unstyled list-inline">
+                <li class="list-inline-item">
+                  <a
+                    href="https://www.facebook.com/people/MM-Doces-Salgados/100063801423014/"
+                    class="btn-floating btn-sm text-white"
+                    style="font-size: 23px"
+                    ><i class="bi bi-facebook"></i
+                  ></a>
+                </li>
+                <li class="list-inline-item">
+                  <a
+                    href="https://www.instagram.com/marlizinhamontedoces/"
+                    class="btn-floating btn-sm text-white"
+                    style="font-size: 23px"
+                    ><i class="bi bi-instagram"></i
+                  ></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- INÍCIO Modal do Carrinho -->
+    <div
+      class="modal fade"
+      id="cart-modal"
+      tabindex="-1"
+      aria-labelledby="cartModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="cartModalLabel">Carrinho de Compras</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+
+          <div class="modal-body">
+            <div id="cart-items">
+              <!-- Os itens do carrinho serão inseridos dinamicamente via JS -->
+            </div>
+
+            <div
+              id="cart-success"
+              class="alert alert-success d-none"
+              role="alert"
+            >
+              Compra finalizada com sucesso! Você será redirecionado em breve.
+            </div>
+
+            <div id="cart-total" class="mt-3 fw-bold">Total: R$ 0,00</div>
+
+            <div class="payment-methods mt-3">
+              <h6>Formas de Pagamento</h6>
+              <ul class="list-unstyled">
+                <!-- Crédito -->
+                <li>
+                  <button
+                    class="btn w-100 text-start d-flex align-items-center justify-content-between"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#creditoCollapse"
+                    aria-expanded="false"
+                    aria-controls="creditoCollapse"
+                    style="background: none; border: none; color: #333"
+                  >
+                    <span
+                      ><i class="bi bi-credit-card me-2 text-warning"></i>Cartão
+                      de Crédito (até 12x)</span
+                    >
+                    <i class="bi bi-chevron-down"></i>
+                  </button>
+                  <div class="collapse mt-2" id="creditoCollapse">
+                    <div
+                      class="p-3 border rounded"
+                      style="background-color: #f1a75a"
+                    >
+                      <div class="mb-2">
+                        <label class="form-label">Número do Cartão</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder="0000 0000 0000 0000"
+                          oninput="this.value=this.value.replace(/\D/g,'')"
+                          maxlength="16"
+                        />
+                      </div>
+                      <div class="mb-2">
+                        <label class="form-label">Nome no Cartão</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder="Nome completo"
+                        />
+                      </div>
+                      <div class="mb-2 d-flex gap-2">
+                        <div class="flex-fill">
+                          <label class="form-label">Validade</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            placeholder="MM/AA"
+                          />
+                        </div>
+                        <div class="flex-fill">
+                          <label class="form-label">CVV</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            placeholder="123"
+                            oninput="this.value=this.value.replace(/\D/g,'')"
+                            maxlength="4"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+
+                <!-- Débito -->
+                <li>
+                  <button
+                    class="btn w-100 text-start d-flex align-items-center justify-content-between"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#debitoCollapse"
+                    aria-expanded="false"
+                    aria-controls="debitoCollapse"
+                    style="background: none; border: none; color: #333"
+                  >
+                    <span
+                      ><i class="bi bi-file-text me-2 text-warning"></i>Cartão
+                      de Débito</span
+                    >
+                    <i class="bi bi-chevron-down"></i>
+                  </button>
+                  <div class="collapse mt-2" id="debitoCollapse">
+                    <div
+                      class="p-3 border rounded"
+                      style="background-color: #f1a75a"
+                    >
+                      <div class="mb-2">
+                        <label class="form-label">Número do Cartão</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder="0000 0000 0000 0000"
+                          oninput="this.value=this.value.replace(/\D/g,'')"
+                          maxlength="16"
+                        />
+                      </div>
+                      <div class="mb-2">
+                        <label class="form-label">Nome no Cartão</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder="Nome completo"
+                        />
+                      </div>
+                      <div class="mb-2 d-flex gap-2">
+                        <div class="flex-fill">
+                          <label class="form-label">Validade</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            placeholder="MM/AA"
+                          />
+                        </div>
+                        <div class="flex-fill">
+                          <label class="form-label">CVV</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            placeholder="123"
+                            oninput="this.value=this.value.replace(/\D/g,'')"
+                            maxlength="4"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+
+                <!-- Pix -->
+                <li>
+                  <button
+                    class="btn w-100 text-start d-flex align-items-center justify-content-between"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#pixCollapse"
+                    aria-expanded="false"
+                    aria-controls="pixCollapse"
+                    style="background: none; border: none; color: #333"
+                  >
+                    <span
+                      ><i class="bi bi-phone me-2 text-warning"></i>Pix (5% de
+                      desconto)</span
+                    >
+                    <i class="bi bi-chevron-down"></i>
+                  </button>
+                  <div class="collapse mt-2" id="pixCollapse">
+                    <div
+                      class="p-3 border rounded text-center"
+                      style="background-color: #f1a75a"
+                    >
+                      <p class="mb-2">
+                        Escaneie o QR Code abaixo para pagamento:
+                      </p>
+                      <div id="pix-qrcode"></div>
+                      <p class="mt-2 mb-0 fw-bold text-success">
+                        Chave Pix: m.marlimonte@gmail.com
+                      </p>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-success"
+              id="finalize-purchase"
+            >
+              Finalizar Compra
+            </button>
+            <button
+              type="button"
+              class="btn btn-danger"
+              data-bs-dismiss="modal"
+            >
+              Fechar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- FIM Modal do Carrinho -->    
+
+    <!-- Bootstrap JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"></script>
+    
+    <!-- Carrinho JS -->
+    <script src="../controllers/carrinho.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="../controllers/pix.js"></script>
+  </body>
+</html>
