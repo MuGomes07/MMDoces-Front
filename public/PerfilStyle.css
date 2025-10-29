@@ -1,3 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Zalando+Sans+Expanded:ital,wght@0,200..900;1,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+
+
+body {
+  background-color: #f8dc6db0 !important;
+  margin: 0;
+  padding-top: var(--topo-height);
+}
+
 .topo {
   display: flex;
   flex-wrap: wrap;
@@ -9,6 +20,10 @@
   z-index: 1050;
   align-items: center;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+
+   font-size: 20px;
+  font-family: 'Zalando Sans Expanded';
+  box-sizing: border-box;
 }
 
 .logo {
@@ -54,6 +69,9 @@
   box-shadow: 0 2px 8px rgba(204,0,0,0.08);
 }
 
+
+
+
 /* Dropdown */
 .dropdown-menu {
   display: none;
@@ -90,6 +108,9 @@
   opacity: 1;
   transform: translateY(0);
 }
+
+
+
 
 /* Carrinho */
 .carrinho {
@@ -273,6 +294,9 @@
 }
 
 
+
+
+
 /* ====== FORMAS DE PAGAMENTO ====== */
 .payment-methods h6 {
   font-weight: 700;
@@ -357,18 +381,13 @@
 
 
 
-
-
-
-
-
-/* Estilos Gerais do Container */
+/* Bloco de informacoes do Usuario */
 .perfil-container-simples {
     max-width: 600px;
     margin: 30px auto;
     padding: 25px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    border: 1px solid #e0e0e0;
+    border: 1px solid #f77423;
     border-radius: 6px;
     background-color: #ffffff;
 }
